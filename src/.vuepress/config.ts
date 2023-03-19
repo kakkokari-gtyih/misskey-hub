@@ -30,14 +30,14 @@ export default defineUserConfig<DefaultThemeOptions>({
             'link',
             {
                 rel: 'stylesheet',
-                href: 'https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c',
+                href: 'https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,700;1,400&display=swap',
             },
         ],
         [
             'link',
             {
                 rel: 'stylesheet',
-                href: 'https://fonts.googleapis.com/css2?family=Kosugi+Maru',
+                href: '/fonts/GenJyuuGothicX.css',
             },
         ],
         [

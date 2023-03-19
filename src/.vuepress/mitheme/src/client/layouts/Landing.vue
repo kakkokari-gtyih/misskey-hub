@@ -399,7 +399,7 @@ html {
 			}
 
 			> .tagline {
-				font-family: "M PLUS Rounded 1c", Roboto, HelveticaNeue, Arial, sans-serif;
+				font-family: "Nunito", Roboto, HelveticaNeue, Arial, sans-serif;
 				font-size: 4em;
 				font-weight: bold;
 				margin-bottom: 40px;
