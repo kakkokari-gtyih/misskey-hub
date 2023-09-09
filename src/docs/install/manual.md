@@ -8,12 +8,12 @@ Misskey構築の手引き
 このガイドではMisskeyのインストール・セットアップ方法について解説します。
 
 ::: danger
-一度使用を始めたサーバーのドメイン・ホスト名は、決して変更しないでください！
+一度使用を始めたサーバーのドメイン・ホスト名では、データベースを作り直さないでください！
 :::
 
 ::: tip 前提条件
 以下のソフトウェアがインストール・設定されていること
-- **[Node.js](https://nodejs.org/en/)** (18.13.x以上)
+- **[Node.js](https://nodejs.org/en/)** (20.4.x以上)
 - **[PostgreSQL](https://www.postgresql.org/)** (15以上)
 - **[Redis](https://redis.io/)**
 - **[FFmpeg](https://www.ffmpeg.org/)**

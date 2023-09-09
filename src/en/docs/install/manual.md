@@ -7,7 +7,7 @@ This guide describes how to install and setup Misskey.
 ----------------------------------------------------------------
 
 ::: danger
-Never change the domain name (hostname) of an instance once you start using it!
+Do not recreate the database with the domain/hostname of the server once you have started using it!
 :::
 
 *1.* Install dependencies
@@ -15,7 +15,7 @@ Never change the domain name (hostname) of an instance once you start using it!
 Please install and setup these softwares:
 
 #### Dependencies :package:
-* **[Node.js](https://nodejs.org/en/)** (18.13.x)
+* **[Node.js](https://nodejs.org/en/)** (20.4.x)
 * **[PostgreSQL](https://www.postgresql.org/)** (15.x)
 * **[Redis](https://redis.io/)**
 * **[FFmpeg](https://www.ffmpeg.org/)**
@@ -92,6 +92,7 @@ If you're on Debian, you will need to install the `build-essential`, `python` pa
 	create database misskey with encoding = 'UTF8';
 	create user misskey with encrypted password '{YOUR_PASSWORD}';
 	grant all privileges on database misskey to misskey;
+	alter database misskey owner to misskey;
 	\q
 	```
 

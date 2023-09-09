@@ -27,7 +27,7 @@
 [docker-compose](./docker.html)なら、手作業でももうちょっと簡単に実行できるはずです。
 
 ::: danger
-一度使用を始めたサーバーのドメイン・ホスト名は、決して変更しないでください！
+一度使用を始めたサーバーのドメイン・ホスト名では、データベースを作り直さないでください！
 :::
 
 ## はじめに
@@ -52,7 +52,7 @@ OSの違い、Misskey本体や依存するソフトウェアのバージョン�
 *   ここではドメインをexample.tldとして解説を進めるので、自分が買ったドメインに適宜置き換えて読むこと。開発環境の場合はlocalhostと読み替えます（設定ファイルの項で別途説明）
 
 ::: danger
-一度使用を始めたサーバーのドメイン・ホスト名は、決して変更しないでください！
+一度使用を始めたサーバーのドメイン・ホスト名では、データベースを作り直さないでください！
 :::
 
 ## nanoの使い方
@@ -92,7 +92,7 @@ Node.jsは、サーバーサイドJavaScript環境であり、Misskeyの基本�
 ```sh
 sudo apt install -y curl
 
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 sudo apt install -y nodejs
 
@@ -103,7 +103,7 @@ node -v
 sudo corepack enable
 ```
 
-v18.x.xなどと表示されればOK。v8.x.xのように低いバージョンが表示された場合は、正しくインストールが行えていないため、サーバーを再起動してもう一度インストールし直すなどしてみよう。
+v20.x.xなどと表示されればOK。v8.x.xのように低いバージョンが表示された場合は、正しくインストールが行えていないため、サーバーを再起動してもう一度インストールし直すなどしてみよう。
 
 ### PostgreSQL
 
@@ -137,7 +137,7 @@ Misskeyで使うユーザーを作成する。\
 （LinuxのユーザーとPostgreSQLのユーザーは別物なので、混同しないよう注意すること。）
 
 ```sql
-CREATE ROLE misskey LOGIN CREATEDB PASSWORD 'hoge';
+CREATE ROLE misskey LOGIN PASSWORD 'hoge';
 ```
 
 データベースを作成。データベース名をmk1としている。
@@ -149,12 +149,12 @@ CREATE DATABASE mk1 OWNER misskey;
 
 ### Redis
 
-Redisは、NoSQLのインメモリデータベースソフトであり、データベースや連合との通信を管理するなどのために必要だ。  
+Redisは、NoSQLのインメモリデータベースソフトであり、データベースや連合との通信を管理するなどのために必要だ。
 redis.ioのドキュメントに従いインストールする。 https://redis.io/docs/getting-started/installation/install-redis-on-linux/
 
 ```sh
 sudo apt install -y curl ca-certificates gnupg2 lsb-release
-		
+
 curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
@@ -524,7 +524,7 @@ CloudFlareのDNS設定が正しいIPアドレスになっているかもう一�
 
 ```sh
 exit
-```sh
+```
 
 /etc/systemd/system/misskey.serviceを作成する。
 
